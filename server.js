@@ -6,16 +6,31 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.json());
 
-const username = 'shishijun997_db_user';
-const password = 'zKGoP4axky3j4qQz';
-const cluster = 'cluster0.2mm5ozn';
-const db = 'To-Do-2026';
+// const username = 'shishijun997_db_user';
+// const password = 'zKGoP4axky3j4qQz';
+// const cluster = 'cluster0.2mm5ozn';
+// const db = 'To-Do-2026';
+
+const username = 'Vercel-Admin-to-do-2026-db';
+const password = '1ymLco6ABArxRNdp';
+const cluster = 'to-do-2026-db.mn6uzff';
+const db = 'to-do';
 
 // 1. Connect to MongoDB
 // Replace the string below with your Atlas connection string if using the cloud
+// mongoose
+//   .connect(
+//     `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/?appName=Cluster0B`,
+//     {
+//       dbName: db,
+//     },
+//   )
+//   .then(() => console.log('Connected to MongoDB...'))
+//   .catch((err) => console.error('Could not connect to MongoDB', err));
+
 mongoose
   .connect(
-    `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/?appName=Cluster0B`,
+    `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/?retryWrites=true&w=majority`,
     {
       dbName: db,
     },
